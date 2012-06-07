@@ -25,7 +25,7 @@ module.exports = (BasePlugin) ->
 			docpad = @docpad
 			logger = @logger
 			documents = docpad.getCollection('documents')
-			logger.log 'debug', 'Generating relations'
+			docpad.log 'debug', 'Generating relations'
 
 			# Cycle through all our documents
 			documents.forEach (document) ->
@@ -44,8 +44,21 @@ module.exports = (BasePlugin) ->
 
 				# Save
 				document.relatedDocuments = relatedDocuments
-				document.set(relatedDocuments:relatedDocuments.toJSON())
 
 			# All done
-			logger.log 'debug', 'Generated relations'
+			docpad.log 'debug', 'Generated relations'
+			return next()
+
+		# Render Before
+		renderBefore: (opts,next) ->
+			# Prepare
+			docpad = @docpad
+			documents = docpad.getCollection('documents')
+
+			# Cycle through all our documents
+			documents.forEach (document) ->
+				relatedDocumentsArray = document.relatedDocuments?.toJSON() or []
+				document.set(relatedDocuments: relatedDocumentsArray)
+
+			# All done
 			return next()
