@@ -22,6 +22,7 @@ module.exports = (BasePlugin) ->
 			docpad = @docpad
 			documents = docpad.getCollection('documents')
 			docpad.log 'debug', 'Generating relations'
+			startDate = new Date()
 
 			# Cycle through all our documents
 			documents.forEach (document) ->
@@ -42,7 +43,8 @@ module.exports = (BasePlugin) ->
 				document.relatedDocuments = relatedDocuments
 
 			# All done
-			docpad.log 'debug', 'Generated relations'
+			seconds = (new Date() - startDate) / 1000
+			docpad.log 'debug', require('util').format("Generated relations in %s", seconds)
 			return next()
 
 		# Render Before
