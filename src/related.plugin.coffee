@@ -21,10 +21,11 @@ module.exports = (BasePlugin) ->
 			me = @
 			docpad = @docpad
 			documents = docpad.getCollection('documents')
+			targetedDocuments = if @config.collectionName then docpad.getCollection(@config.collectionName) else documents
 			docpad.log 'debug', 'Generating relations'
 			startDate = new Date()
 
-			# Cycle through all our documents
+			# Cycle through all targeted documents
 			documents.forEach (document) ->
 				# Prepare
 				tags = document.get('tags') or []
