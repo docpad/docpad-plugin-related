@@ -26,7 +26,7 @@ module.exports = (BasePlugin) ->
 			startDate = new Date()
 
 			# Cycle through all targeted documents
-			documents.forEach (document) ->
+			targetedDocuments.forEach (document) ->
 				# Prepare
 				tags = document.get('tags') or []
 
@@ -51,8 +51,7 @@ module.exports = (BasePlugin) ->
 		# Render Before
 		renderBefore: (opts,next) ->
 			# Prepare
-			docpad = @docpad
-			documents = docpad.getCollection('documents')
+			documents = @docpad.getCollection(@config.collectionName or 'documents')
 
 			# Cycle through all our documents
 			documents.forEach (document) ->
