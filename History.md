@@ -1,5 +1,9 @@
 ## History
 
+- v2.0.4 October 25, 2012
+	- Added elapsed time in debug log
+	- Added a collectionName option to optimize the generation on huge collections
+
 - v2.0.3 October 8, 2012
 	- Fixed plugin name (`relations` to `related`)
 
