@@ -17,9 +17,6 @@ module.exports = (BasePlugin) ->
 
 		# Parsing all files has finished
 		parseAfter: (opts,next) ->
-			# Requires
-			balUtil = require('bal-util')
-
 			# Prepare
 			me = @
 			docpad = @docpad
