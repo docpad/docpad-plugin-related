@@ -1,6 +1,6 @@
 ## History
 
-- v2.0.4 October 25, 2012
+- v2.0.4 November 17, 2012
 	- Added elapsed time in debug log
 	- Added a collectionName option to optimize the generation on huge collections
 
