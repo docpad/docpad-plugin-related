@@ -17,17 +17,16 @@ module.exports = (BasePlugin) ->
 
 		# Parsing all files has finished
 		parseAfter: (opts,next) ->
-			# Requires
-			balUtil = require('bal-util')
-
 			# Prepare
 			me = @
 			docpad = @docpad
 			documents = docpad.getCollection('documents')
+			targetedDocuments = if @config.collectionName then docpad.getCollection(@config.collectionName) else documents
 			docpad.log 'debug', 'Generating relations'
+			startDate = new Date()
 
-			# Cycle through all our documents
-			documents.forEach (document) ->
+			# Cycle through all targeted documents
+			targetedDocuments.forEach (document) ->
 				# Prepare
 				tags = document.get('tags') or []
 
@@ -45,14 +44,14 @@ module.exports = (BasePlugin) ->
 				document.relatedDocuments = relatedDocuments
 
 			# All done
-			docpad.log 'debug', 'Generated relations'
+			seconds = (new Date() - startDate) / 1000
+			docpad.log 'debug', require('util').format("Generated relations in %s", seconds)
 			return next()
 
 		# Render Before
 		renderBefore: (opts,next) ->
 			# Prepare
-			docpad = @docpad
-			documents = docpad.getCollection('documents')
+			documents = @docpad.getCollection(@config.collectionName or 'documents')
 
 			# Cycle through all our documents
 			documents.forEach (document) ->

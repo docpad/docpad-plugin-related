@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-related",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "Adds support for related documents to DocPad",
 	"homepage": "http://docpad.org/plugin/related",
 	"keywords": [
@@ -19,18 +19,15 @@
 		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
 	],
 	"bugs": {
-		"url": "https://github.com/bevry/docpad-extras/issues"
+		"url": "https://github.com/docpad/docpad-plugin-related/issues"
 	},
 	"repository" : {
 		"type": "git",
-		"url": "http://github.com/bevry/docpad-extras.git"
+		"url": "https://github.com/docpad/docpad-plugin-related.git"
 	},
 	"engines" : {
 		"node": ">=0.4.0",
 		"docpad": "6.x"
-	},
-	"dependencies": {
-		"bal-util": "1.13.x"
 	},
 	"devDependencies": {
 		"coffee-script": "1.3.x"
