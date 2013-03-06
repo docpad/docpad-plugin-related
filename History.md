@@ -1,5 +1,10 @@
 ## History
 
+- v2.0.5 March 7, 2013
+	- Repackaged
+	- Dependency upgrades
+		-  `coffee-script` 1.4.x to ~1.4.0
+
 - v2.0.4 November 17, 2012
 	- Added elapsed time in debug log
 	- Added a collectionName option to optimize the generation on huge collections
