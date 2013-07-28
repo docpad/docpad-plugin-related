@@ -1,5 +1,9 @@
 ## History
 
+- v2.1.0 July 28, 2013
+	- Renamed `collectionName` to `parentCollectionName` and made it default to `html` instead of `documents`
+	- Dependency upgrades
+
 - v2.0.5 March 7, 2013
 	- Repackaged
 	- Dependency upgrades

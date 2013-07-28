@@ -40,9 +40,10 @@ Both posts will be related through the `animal` tag. In the template, it's now p
 <% end %>
 ```
 
-## Options
+## Configuration
 
-- *collectionName* : can be used to narrow the scope of the plugin to a specific collection and therefore improve performance.
+- `parentCollectionName` defaults to `html` - use to specify the collection we should scan for related documents
+
 
 ## History
 You can discover the history inside the `History.md` file

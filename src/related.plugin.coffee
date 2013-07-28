@@ -5,6 +5,10 @@ module.exports = (BasePlugin) ->
 		# Plugin Name
 		name: 'related'
 
+		# Plugin Config
+		config:
+			parentCollectionName: 'html'
+
 		# Has inside
 		howManyItemsInside: (aArray,bArray) ->
 			count = 0
@@ -20,23 +24,22 @@ module.exports = (BasePlugin) ->
 			# Prepare
 			me = @
 			docpad = @docpad
-			documents = docpad.getCollection('documents')
-			targetedDocuments = if @config.collectionName then docpad.getCollection(@config.collectionName) else documents
+			config = @getConfig()
+			collection = docpad.getCollection(config.parentCollectionName)
 			docpad.log 'debug', 'Generating relations'
 			startDate = new Date()
 
 			# Cycle through all targeted documents
-			targetedDocuments.forEach (document) ->
+			collection.forEach (document) ->
 				# Prepare
 				tags = document.get('tags') or []
 
 				# Create a live child collection of the related documents
-				relatedDocuments = documents
-					.findAll(
+				relatedDocuments = collection
+					.findAllLive(
 						tags: '$in': tags
 						id: $ne: document.id
-					).
-					live(true)
+					)
 					.setComparator (a,b) ->
 						return me.howManyItemsInside(a,tags) < me.howManyItemsInside(b,tags)
 
