@@ -1,39 +1,42 @@
 {
-	"name": "docpad-plugin-related",
-	"version": "2.1.0",
-	"description": "Adds support for related documents to DocPad",
-	"homepage": "http://docpad.org/plugin/related",
-	"keywords": [
-		"docpad",
-		"docpad-plugin",
-		"related",
-		"documents",
-		"tags",
-		"relations"
-	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"contributors": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"bugs": {
-		"url": "http://docpad.org/plugin/related/issues"
-	},
-	"repository" : {
-		"type": "git",
-		"url": "https://github.com/docpad/docpad-plugin-related.git"
-	},
-	"engines" : {
-		"node": ">=0.4",
-		"docpad": "6.x"
-	},
-	"devDependencies": {
-		"coffee-script": "~1.6.2"
-	},
-	"main": "./out/related.plugin.js",
-	"scripts": {
-		"test": "node ./out/related.test.js"
-	}
+  "name": "docpad-plugin-related",
+  "version": "2.1.0",
+  "description": "Adds support for related documents to DocPad",
+  "homepage": "http://docpad.org/plugin/related",
+  "keywords": [
+    "docpad",
+    "docpad-plugin",
+    "related",
+    "documents",
+    "tags",
+    "relations"
+  ],
+  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "bugs": {
+    "url": "http://docpad.org/plugin/related/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/docpad/docpad-plugin-related.git"
+  },
+  "engines": {
+    "node": ">=0.4",
+    "docpad": "6.x"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2"
+  },
+  "main": "./out/related.plugin.js",
+  "scripts": {
+    "test": "node ./out/related.test.js"
+  },
+  "peerDependencies": {
+    "docpad": "6"
+  }
 }
