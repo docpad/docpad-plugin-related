@@ -1,8 +1,18 @@
 {
   "name": "docpad-plugin-related",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Adds support for related documents to DocPad",
   "homepage": "http://docpad.org/plugin/related",
+  "license": {
+    "type": "MIT"
+  },
+  "badges": {
+    "travis": true,
+    "npm": true,
+    "gittip": "bevry",
+    "flattr": "344188/balupton-on-Flattr",
+    "paypal": "QB8GQPZAH84N6"
+  },
   "keywords": [
     "docpad",
     "docpad-plugin",
@@ -11,12 +21,13 @@
     "tags",
     "relations"
   ],
-  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "author": "2012+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
+    "Delapouite (https://github.com/Delapouite)"
   ],
   "bugs": {
     "url": "http://docpad.org/plugin/related/issues"
@@ -28,14 +39,16 @@
   "engines": {
     "node": ">=0.4"
   },
+  "peerDependencies": {
+    "docpad": "6"
+  },
   "devDependencies": {
-    "coffee-script": "~1.6.2"
+    "docpad": "6",
+    "coffee-script": "~1.6.2",
+    "projectz": "~0.2.7"
   },
   "main": "./out/related.plugin.js",
   "scripts": {
     "test": "node ./out/related.test.js"
-  },
-  "peerDependencies": {
-    "docpad": "6"
   }
 }

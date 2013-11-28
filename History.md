@@ -1,5 +1,10 @@
 ## History
 
+- v2.2.0 November 28, 2013
+	- Now use a template helper to get related documents, rather than attaching them to the model
+		- This avoids a cyclic reference problem that causes serialisation to run out of memory
+	- Repackaged
+
 - v2.1.0 July 28, 2013
 	- Renamed `collectionName` to `parentCollectionName` and made it default to `html` instead of `documents`
 	- Dependency upgrades

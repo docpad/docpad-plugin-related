@@ -19,6 +19,17 @@ module.exports = (BasePlugin) ->
 						break
 			return count
 
+		# Extend the template data with the helper we want
+		extendTemplateData: (opts) ->
+			opts.templateData.getRelatedDocuments ?= (document) ->
+				document ?= @document
+				if document.id is @documentModel?.id
+					documentModel = @documentModel
+				else
+					documentModel = @getFileById(document.id)
+				return documentModel.relatedDocuments?.toJSON() or []
+			return true
+
 		# Parsing all files has finished
 		parseAfter: (opts,next) ->
 			# Prepare
@@ -26,7 +37,7 @@ module.exports = (BasePlugin) ->
 			docpad = @docpad
 			config = @getConfig()
 			collection = docpad.getCollection(config.parentCollectionName)
-			docpad.log 'debug', 'Generating relations'
+			docpad.log('debug', 'Generating relations')
 			startDate = new Date()
 
 			# Cycle through all targeted documents
@@ -45,21 +56,11 @@ module.exports = (BasePlugin) ->
 
 				# Save
 				document.relatedDocuments = relatedDocuments
+				# @TODO
+				# We should probably listen for the remove or destroy event on the model
+				# to destroy this collection as well
 
 			# All done
 			seconds = (new Date() - startDate) / 1000
 			docpad.log 'debug', require('util').format("Generated relations in %s", seconds)
-			return next()
-
-		# Render Before
-		renderBefore: (opts,next) ->
-			# Prepare
-			documents = @docpad.getCollection(@config.collectionName or 'documents')
-
-			# Cycle through all our documents
-			documents.forEach (document) ->
-				relatedDocumentsArray = document.relatedDocuments?.toJSON() or []
-				document.set(relatedDocuments: relatedDocumentsArray)
-
-			# All done
 			return next()
