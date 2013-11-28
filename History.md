@@ -1,4 +1,4 @@
-## History
+# History
 
 - v2.2.0 November 28, 2013
 	- Now use a template helper to get related documents, rather than attaching them to the model
