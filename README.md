@@ -63,7 +63,7 @@ To output the related documents, use the `getRelatedDocuments(document?)` collec
 <!-- HISTORY/ -->
 
 ## History
-[Discover the change history by heading on over to the `History.md` file.](https://github.com/docpad/docpad-plugin-related/blob/master/History.md#files)
+[Discover the change history by heading on over to the `HISTORY.md` file.](https://github.com/docpad/docpad-plugin-related/blob/master/HISTORY.md#files)
 
 <!-- /HISTORY -->
 
@@ -72,7 +72,7 @@ To output the related documents, use the `getRelatedDocuments(document?)` collec
 
 ## Contribute
 
-[Discover how you can contribute by heading on over to the `Contributing.md` file.](https://github.com/docpad/docpad-plugin-related/blob/master/Contributing.md#files)
+[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/docpad/docpad-plugin-related/blob/master/CONTRIBUTING.md#files)
 
 <!-- /CONTRIBUTE -->
 
@@ -99,10 +99,10 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-- Benjamin Lupton <b@lupton.cc> (https://github.com/balupton) - [view contributions](https://github.com/docpad/docpad-plugin-related/commits?author=balupton)
+- balupton (https://github.com/balupton) - [view contributions](https://github.com/docpad/docpad-plugin-related/commits?author=balupton)
 - Delapouite (https://github.com/Delapouite) - [view contributions](https://github.com/docpad/docpad-plugin-related/commits?author=Delapouite)
 
-[Become a contributor!](https://github.com/docpad/docpad-plugin-related/blob/master/Contributing.md#files)
+[Become a contributor!](https://github.com/docpad/docpad-plugin-related/blob/master/CONTRIBUTING.md#files)
 
 <!-- /BACKERS -->
 

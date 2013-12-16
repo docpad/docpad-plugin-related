@@ -21,6 +21,7 @@ module.exports = (BasePlugin) ->
 
 		# Extend the template data with the helper we want
 		extendTemplateData: (opts) ->
+			# Prepare
 			opts.templateData.getRelatedDocuments ?= (document) ->
 				document ?= @document
 				if document.id is @documentModel?.id
@@ -28,39 +29,37 @@ module.exports = (BasePlugin) ->
 				else
 					documentModel = @getFileById(document.id)
 				return documentModel.relatedDocuments?.toJSON() or []
-			return true
 
-		# Parsing all files has finished
-		parseAfter: (opts,next) ->
+			# Chain
+			@
+
+		# Extend Collections
+		extendCollections: (opts) ->
 			# Prepare
-			me = @
-			docpad = @docpad
 			config = @getConfig()
+			docpad = @docpad
+
+			# Add our partials collection
 			collection = docpad.getCollection(config.parentCollectionName)
-			docpad.log('debug', 'Generating relations')
-			startDate = new Date()
+				.on 'add change:tags', (document) ->
+					# Prepare
+					tags = document.get('tags') or []
 
-			# Cycle through all targeted documents
-			collection.forEach (document) ->
-				# Prepare
-				tags = document.get('tags') or []
+					# Create a live child collection of the related documents
+					relatedDocuments = collection
+						.findAllLive(
+							tags: '$in': tags
+							id: $ne: document.id
+						)
+						.setComparator (a,b) ->
+							return me.howManyItemsInside(a,tags) < me.howManyItemsInside(b,tags)
 
-				# Create a live child collection of the related documents
-				relatedDocuments = collection
-					.findAllLive(
-						tags: '$in': tags
-						id: $ne: document.id
-					)
-					.setComparator (a,b) ->
-						return me.howManyItemsInside(a,tags) < me.howManyItemsInside(b,tags)
+					# Save
+					document.relatedDocuments = relatedDocuments
 
-				# Save
-				document.relatedDocuments = relatedDocuments
-				# @TODO
-				# We should probably listen for the remove or destroy event on the model
-				# to destroy this collection as well
+				.on 'remove', (document) ->
+					document.relatedDocuments?.destroy()
+					document.relatedDocuments = null
 
-			# All done
-			seconds = (new Date() - startDate) / 1000
-			docpad.log 'debug', require('util').format("Generated relations in %s", seconds)
-			return next()
+			# Chain
+			@

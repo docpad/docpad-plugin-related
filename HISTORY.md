@@ -1,5 +1,8 @@
 # History
 
+- v2.2.1 December 16, 2013
+	- Relations are now determined as tags are discovered
+
 - v2.2.0 November 28, 2013
 	- Now use a template helper to get related documents, rather than attaching them to the model
 		- This avoids a cyclic reference problem that causes serialisation to run out of memory
