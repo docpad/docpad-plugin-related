@@ -1,5 +1,8 @@
 # History
 
+- v2.2.2 December 16, 2013
+	- Fixed `ReferenceError: me is not defined` (regression since v2.2.1)
+
 - v2.2.1 December 16, 2013
 	- Relations are now determined as tags are discovered
 

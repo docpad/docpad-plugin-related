@@ -36,6 +36,7 @@ module.exports = (BasePlugin) ->
 		# Extend Collections
 		extendCollections: (opts) ->
 			# Prepare
+			plugin = @
 			config = @getConfig()
 			docpad = @docpad
 
@@ -52,7 +53,7 @@ module.exports = (BasePlugin) ->
 							id: $ne: document.id
 						)
 						.setComparator (a,b) ->
-							return me.howManyItemsInside(a,tags) < me.howManyItemsInside(b,tags)
+							return plugin.howManyItemsInside(a,tags) < plugin.howManyItemsInside(b,tags)
 
 					# Save
 					document.relatedDocuments = relatedDocuments

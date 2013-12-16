@@ -99,7 +99,7 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-- balupton (https://github.com/balupton) - [view contributions](https://github.com/docpad/docpad-plugin-related/commits?author=balupton)
+- Benjamin Lupton <b@lupton.cc> (https://github.com/balupton) - [view contributions](https://github.com/docpad/docpad-plugin-related/commits?author=balupton)
 - Delapouite (https://github.com/Delapouite) - [view contributions](https://github.com/docpad/docpad-plugin-related/commits?author=Delapouite)
 
 [Become a contributor!](https://github.com/docpad/docpad-plugin-related/blob/master/CONTRIBUTING.md#files)
