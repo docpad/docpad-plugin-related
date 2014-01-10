@@ -9,9 +9,12 @@
   "badges": {
     "travis": true,
     "npm": true,
-    "gittip": "bevry",
+    "david": true,
+    "daviddev": true,
+    "gittip": "docpad",
     "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6"
+    "paypal": "QB8GQPZAH84N6",
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a"
   },
   "keywords": [
     "docpad",
@@ -30,7 +33,7 @@
     "Delapouite (https://github.com/Delapouite)"
   ],
   "bugs": {
-    "url": "http://docpad.org/plugin/related/issues"
+    "url": "https://github.com/docpad/docpad-plugin-related/issues"
   },
   "repository": {
     "type": "git",
@@ -45,7 +48,7 @@
   "devDependencies": {
     "docpad": "6",
     "coffee-script": "~1.6.2",
-    "projectz": "~0.3.0"
+    "projectz": "~0.3.9"
   },
   "main": "./out/related.plugin.js",
   "scripts": {
