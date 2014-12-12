@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "docpad": "6",
-    "coffee-script": "~1.6.2",
+    "coffee-script": "~1.8.0",
     "projectz": "~0.3.17"
   },
   "main": "./out/related.plugin.js",
@@ -58,5 +58,6 @@
   },
   "cakeConfiguration": {
     "COFFEE_SRC_PATH": "src"
-  }
+  },
+  "dependencies": {}
 }
