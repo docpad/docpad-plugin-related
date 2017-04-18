@@ -1,5 +1,9 @@
 # History
 
+## v2.3.0 2017 April 18
+- Updated base files
+- Bumped minimum node version to >=0.12 due to [failed builds on earlier](https://travis-ci.org/docpad/docpad-plugin-related/builds/223019640)
+
 ## v2.2.2 2013 December 16
 - Fixed `ReferenceError: me is not defined` (regression since v2.2.1)
 

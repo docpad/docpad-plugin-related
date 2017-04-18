@@ -1,7 +1,7 @@
 {
   "title": "Related Plugin for DocPad",
   "name": "docpad-plugin-related",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Adds support for related documents to DocPad",
   "homepage": "https://github.com/docpad/docpad-plugin-related",
   "license": "MIT",
@@ -58,7 +58,7 @@
     "url": "https://github.com/docpad/docpad-plugin-related.git"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.12"
   },
   "editions": [
     {
