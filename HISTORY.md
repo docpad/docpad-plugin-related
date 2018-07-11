@@ -1,5 +1,10 @@
 # History
 
+## v2.4.0 2018 July 11
+- Updated base files using [boundation](https://github.com/bevry/boundation)
+- Compiled with CoffeeScript v2
+- Updated dependencies
+
 ## v2.3.0 2017 April 18
 - Updated base files
 - Bumped minimum node version to >=0.12 due to [failed builds on earlier](https://travis-ci.org/docpad/docpad-plugin-related/builds/223019640)
