@@ -73,6 +73,9 @@ To output the related documents, use the `getRelatedDocuments(document?)` collec
 - `parentCollectionName` defaults to `html` - use to specify the collection we should scan for related documents
 
 
+
+
+
 <!-- INSTALL/ -->
 
 <h2>Install</h2>
